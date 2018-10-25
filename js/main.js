@@ -24,14 +24,25 @@ performance.mark('start_all');
 
             const root2 = document.querySelector('.root2');
 
-            console.log('root1', root1);
-            console.log('root2', root2);
-            console.log('nb multipleElements', multipleElements.length);
+            if (root1) {
+                console.log('domRoot1 %c' + root1, "background-color:#00cc00;color:white;");
+                console.log('domRoot1 element #1', root1)
+            } else {
+                console.log('domRoot1 %c' + (root1 ? root1 : ' not ready '), "background-color:#cc0000;color:white;");
+            }
+
+            if (root2) {
+                console.log('domRoot2 %c' + root2, "background-color:#00cc00;color:white;");
+                console.log('domRoot2 element #2', root2)
+            } else {
+                console.log('domRoot2 %c not ready ', "background-color:#cc0000;color:white;");
+            }
+
+            console.log('nb multipleElements [.link selector]', multipleElements.length);
         },
         updateDom: function (elements) {
             elements.forEach(function (elem, idx) {
-                elem.setAttribute('href', 'tata?p='+idx)
-                // console.log();
+                elem.setAttribute('href', 'http://www.ingin.fr?script-defer?p='+idx)
             })
         }
     }
