@@ -8,5 +8,8 @@
     "start": "serve -p 3040"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "serve": "^10.0.2"
+  }
 }
