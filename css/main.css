@@ -1,0 +1,68 @@
+body {
+  margin: 0; }
+
+/* The animation code */
+@keyframes exampleLeft {
+  0% {
+    left: 0; }
+  100% {
+    left: -50%; } }
+
+@keyframes exampleRight {
+  0% {
+    right: 0; }
+  100% {
+    right: -50%; } }
+
+.animateBg {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  background-color: wheat;
+  position: relative;
+  z-index: 0; }
+  .animateBg:before {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    background-color: white;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    animation-name: exampleLeft;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards; }
+  .animateBg:after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    background-color: white;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    animation-name: exampleRight;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards; }
+
+.test {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background-color: whitesmoke; }
+  .test--red {
+    background-color: red; }
+  .test--green {
+    background-color: green; }
+  .test--yellow {
+    background-color: yellow; }
