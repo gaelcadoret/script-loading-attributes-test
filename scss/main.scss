@@ -5,21 +5,80 @@ body {
 /* The animation code */
 @keyframes exampleLeft {
   0% {left: 0;}
-  100% {left: -50%;}
+  100% {left: -80%;}
 }
 
 @keyframes exampleRight {
   0% {right: 0;}
-  100% {right: -50%;}
+  100% {right: -80%;}
 }
 
 .animateBg {
   display: block;
   width: 100%;
   overflow: hidden;
-  background-color: wheat;
   position: relative;
   z-index: 0;
+
+  &--advance {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+
+      height: 1000%;
+      width: 100%;
+      background-color: #CC000055;
+      top: -500%;
+      left: -70%;
+
+      z-index: 1;
+
+      -webkit-transform: rotate(-40deg);
+      -moz-transform: rotate(-40deg);
+      -ms-transform: rotate(-40deg);
+      -o-transform: rotate(-40deg);
+      transform: rotate(-40deg);
+
+      //animation-name: exampleLeft;
+      //animation-duration: 2s;
+      //animation-delay: 2s;
+      //animation-iteration-count: 1;
+      //animation-timing-function: ease-in;
+      //animation-fill-mode: forwards;
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      height: 1000%;
+      width: 100%;
+      background-color: #00CC0055;
+      top: -149%;
+      right: -63%;
+      z-index: 1;
+
+      -webkit-transform: rotate(-40deg);
+      -moz-transform: rotate(-40deg);
+      -ms-transform: rotate(-40deg);
+      -o-transform: rotate(-40deg);
+      transform: rotate(-40deg);
+
+      //animation-name: exampleRight;
+      //animation-duration: 2s;
+      //animation-delay: 2s;
+      //animation-iteration-count: 1;
+      //animation-timing-function: ease-in;
+      //animation-fill-mode: forwards;
+    }
+  }
 
   &:before {
     content: '';
