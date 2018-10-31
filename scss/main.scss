@@ -4,14 +4,27 @@ body {
 
 /* The animation code */
 @keyframes exampleLeft {
-  0% {left: 0;}
-  100% {left: -80%;}
+  //0% {left: 0%;}
+  100% {left: -150%;}
 }
 
 @keyframes exampleRight {
-  0% {right: 0;}
-  100% {right: -80%;}
+  //0% {right: inherit;}
+  100% {right: -150%;}
 }
+
+$easeInQuad: cubic-bezier(0.550, 0.085, 0.680, 0.530);
+$easeInCubic: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+$easeInQuart: cubic-bezier(0.895, 0.030, 0.685, 0.220);
+$easeInQuint: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+$easeInSine: cubic-bezier(0.470, 0.000, 0.745, 0.715);
+$easeInExpo: cubic-bezier(0.950, 0.050, 0.795, 0.035);
+$easeInCirc: cubic-bezier(0.600, 0.040, 0.980, 0.335);
+$easeInBack: cubic-bezier(0.600, -0.280, 0.735, 0.045);
+
+$animation-duration: 0.6s;
+$animation-delay: 1s;
+$_DEBUG: false;
 
 .animateBg {
   display: block;
@@ -20,6 +33,10 @@ body {
   position: relative;
   z-index: 0;
 
+  img {
+    width: 100%;
+  }
+
   &--advance {
     display: block;
     width: 100%;
@@ -27,56 +44,78 @@ body {
     position: relative;
     z-index: 0;
 
+    img {
+      width: 100%;
+    }
+
     &:before {
       content: '';
       display: block;
       position: absolute;
 
+      @if $_DEBUG {
+        //background-color: #CC000033;
+        background-color: white;
+      } @else {
+        background-color: white;
+      }
+
       height: 1000%;
       width: 100%;
-      background-color: #CC000055;
       top: -500%;
-      left: -70%;
+      left: -75%;
 
       z-index: 1;
 
-      -webkit-transform: rotate(-40deg);
-      -moz-transform: rotate(-40deg);
-      -ms-transform: rotate(-40deg);
-      -o-transform: rotate(-40deg);
-      transform: rotate(-40deg);
+      -webkit-transform: rotate(-36deg);
+      -moz-transform: rotate(-36deg);
+      -ms-transform: rotate(-36deg);
+      -o-transform: rotate(-36deg);
+      transform: rotate(-36deg);
 
-      //animation-name: exampleLeft;
-      //animation-duration: 2s;
-      //animation-delay: 2s;
-      //animation-iteration-count: 1;
-      //animation-timing-function: ease-in;
-      //animation-fill-mode: forwards;
+      @if $_DEBUG == false {
+        animation-name: exampleLeft;
+        animation-duration: $animation-duration;
+        animation-delay: $animation-delay;
+        animation-iteration-count: 1;
+        animation-timing-function: $easeInExpo;
+        animation-fill-mode: forwards;
+      }
     }
 
     &:after {
       content: '';
       display: block;
       position: absolute;
+
+      @if $_DEBUG {
+        //background-color: #00CC0033;
+        background-color: white;
+      } @else {
+        background-color: white;
+      }
+
       height: 1000%;
       width: 100%;
-      background-color: #00CC0055;
-      top: -149%;
-      right: -63%;
+      top: -350%;
+      right: -77%;
+
       z-index: 1;
 
-      -webkit-transform: rotate(-40deg);
-      -moz-transform: rotate(-40deg);
-      -ms-transform: rotate(-40deg);
-      -o-transform: rotate(-40deg);
-      transform: rotate(-40deg);
+      -webkit-transform: rotate(-36deg);
+      -moz-transform: rotate(-36deg);
+      -ms-transform: rotate(-36deg);
+      -o-transform: rotate(-36deg);
+      transform: rotate(-36deg);
 
-      //animation-name: exampleRight;
-      //animation-duration: 2s;
-      //animation-delay: 2s;
-      //animation-iteration-count: 1;
-      //animation-timing-function: ease-in;
-      //animation-fill-mode: forwards;
+      @if $_DEBUG == false {
+        animation-name: exampleRight;
+        animation-duration: $animation-duration;
+        animation-delay: $animation-delay;
+        animation-iteration-count: 1;
+        animation-timing-function: $easeInExpo;
+        animation-fill-mode: forwards;
+      }
     }
   }
 
