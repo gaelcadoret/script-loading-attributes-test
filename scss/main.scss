@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  font-family: "Roboto";
 }
 
 /* The animation code */
@@ -25,6 +26,80 @@ $easeInBack: cubic-bezier(0.600, -0.280, 0.735, 0.045);
 $animation-duration: 0.6s;
 $animation-delay: 1s;
 $_DEBUG: false;
+$green: #8fb32f;
+$blue: lightblue;
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-size: 1rem;
+  position: relative;
+  padding-bottom: 0.8rem;
+  min-width: 120px;
+  text-transform: uppercase;
+  font-family: "Roboto Mono Light";
+  font-weight: 600;
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    min-width: inherit;
+    height: 6px;
+    background-color: $green;
+  }
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+
+section {
+  background-color: whitesmoke;
+  padding: 0.5rem;
+  box-sizing: border-box;
+
+  .section-container {
+    text-align: center;
+    line-height: 3rem;
+    font-size: 1.5rem;
+  }
+
+  .side-effect {
+    min-height: 150px;
+
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: -50px;
+      top: 50%;
+      width: 50px;
+      height: 50px;
+
+      transform: translateY(-50%) rotate(45deg);
+      border-color: $blue;
+      border-style: solid;
+      border-width: 6px;
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      right: -50px;
+      top: 50%;
+      width: 50px;
+      height: 50px;
+
+      transform: translateY(-50%) rotate(45deg);
+      border-color: $green;
+      border-style: solid;
+      border-width: 6px;
+    }
+  }
+}
 
 .animateBg {
   display: block;
@@ -131,8 +206,8 @@ $_DEBUG: false;
     z-index: 1;
 
     animation-name: exampleLeft;
-    animation-duration: 2s;
-    animation-delay: 2s;
+    animation-duration: $animation-duration;
+    animation-delay: $animation-delay;
     animation-iteration-count: 1;
     animation-timing-function: ease-in;
     animation-fill-mode: forwards;
@@ -145,13 +220,14 @@ $_DEBUG: false;
     height: 100%;
     width: 50%;
     background-color: white;
+
     top: 0;
     right: 0;
     z-index: 1;
 
     animation-name: exampleRight;
-    animation-duration: 2s;
-    animation-delay: 2s;
+    animation-duration: $animation-duration;
+    animation-delay: $animation-delay;
     animation-iteration-count: 1;
     animation-timing-function: ease-in;
     animation-fill-mode: forwards;

@@ -1,5 +1,6 @@
 body {
-  margin: 0; }
+  margin: 0;
+  font-family: "Roboto"; }
 
 /* The animation code */
 @keyframes exampleLeft {
@@ -9,6 +10,66 @@ body {
 @keyframes exampleRight {
   100% {
     right: -150%; } }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-size: 1rem;
+  position: relative;
+  padding-bottom: 0.8rem;
+  min-width: 120px;
+  text-transform: uppercase;
+  font-family: "Roboto Mono Light";
+  font-weight: 600; }
+  h1:before, h2:before, h3:before, h4:before, h5:before, h6:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    min-width: inherit;
+    height: 6px;
+    background-color: #8fb32f; }
+
+h1 {
+  font-size: 2rem; }
+
+h2 {
+  font-size: 1.8rem; }
+
+section {
+  background-color: whitesmoke;
+  padding: 0.5rem;
+  box-sizing: border-box; }
+  section .section-container {
+    text-align: center;
+    line-height: 3rem;
+    font-size: 1.5rem; }
+  section .side-effect {
+    min-height: 150px; }
+    section .side-effect:before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: -50px;
+      top: 50%;
+      width: 50px;
+      height: 50px;
+      transform: translateY(-50%) rotate(45deg);
+      border-color: lightblue;
+      border-style: solid;
+      border-width: 6px; }
+    section .side-effect:after {
+      content: '';
+      display: block;
+      position: absolute;
+      right: -50px;
+      top: 50%;
+      width: 50px;
+      height: 50px;
+      transform: translateY(-50%) rotate(45deg);
+      border-color: #8fb32f;
+      border-style: solid;
+      border-width: 6px; }
 
 .animateBg {
   display: block;
@@ -79,8 +140,8 @@ body {
     left: 0;
     z-index: 1;
     animation-name: exampleLeft;
-    animation-duration: 2s;
-    animation-delay: 2s;
+    animation-duration: 0.6s;
+    animation-delay: 1s;
     animation-iteration-count: 1;
     animation-timing-function: ease-in;
     animation-fill-mode: forwards; }
@@ -95,8 +156,8 @@ body {
     right: 0;
     z-index: 1;
     animation-name: exampleRight;
-    animation-duration: 2s;
-    animation-delay: 2s;
+    animation-duration: 0.6s;
+    animation-delay: 1s;
     animation-iteration-count: 1;
     animation-timing-function: ease-in;
     animation-fill-mode: forwards; }
