@@ -5,14 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "serve -p 3040",
+    "start": "browser-sync start --server --files 'css/*.css' 'index.html'",
     "watch": "node-sass -w ./scss -o ./css"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "node-sass": "^4.9.4",
-    "serve": "^10.0.2"
+    "browser-sync": "^2.26.3",
+    "node-sass": "^4.9.4"
   },
   "dependencies": {}
 }

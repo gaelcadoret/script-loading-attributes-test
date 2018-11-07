@@ -8,13 +8,13 @@ of a JavaScript script and show how to use the performance API with following me
 * performance.measure
 * performance.getEntriesByType
 
-## Installation of the optional dependency
+## Installation of the optional dependency => "browser-sync"
 `npm install`
 
 ## Start server (if you do not have one)
 `npm start`
 
-Server start at => `http://localhost:3040` and have a look inside the console devtool ;)
+Server start at => `http://localhost:3000` and have a look inside the console devtool ;)
 
 ## Update script attribute
 Inside "index.html" file, change the script tag as following :
