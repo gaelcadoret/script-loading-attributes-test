@@ -3,6 +3,44 @@ body {
   font-family: "Roboto";
 }
 
+.region-map {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.map-region-single {
+  fill: #0b72a6;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  display: inline;
+  position: relative;
+}
+
+.map-region:hover .map-region-single {
+  fill: #fe9718;
+  stroke: #0b72a6;
+  stroke-width: 2px;
+}
+
+path {
+  stroke: #000000;
+  stroke-width: 1px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-opacity: .25;
+  fill: #86aae0;
+}
+
+g path:hover {
+  fill: #86eee0 !important;
+}
+
+g:hover path {
+  fill: #86cce0;
+}
+
+
 /* The animation code */
 @keyframes exampleLeft {
   //0% {left: 0%;}
