@@ -1,0 +1,12 @@
+body {
+  margin: 0;
+  font-family: "Roboto";
+}
+
+.red { color: red; }
+.blue { color: blue; }
+.pink { color: hotpink; }
+
+.s { font-size: 10px; color: darkgreen; }
+.m { font-size: 14px; color: dodgerblue; }
+.l { font-size: 18px; color: orangered; }
